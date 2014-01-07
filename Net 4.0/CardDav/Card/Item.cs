@@ -244,7 +244,7 @@ namespace CardDav.Card
                         data = System.Text.Encoding.Default.GetString(Mimes.QuotedPrintableDecode(System.Text.Encoding.Default.GetBytes(data)));
                     }
                     else if(encoding == "b"){
-                        data = System.Text.Encoding.Default.GetString(Net.FromBase64(System.Text.Encoding.Default.GetBytes(data)));
+                        data = System.Text.Encoding.UTF8.GetString(Convert.FromBase64String(data));
                     }
                     else{
                         throw new Exception("Unknown data encoding '" + encoding + "' !");
